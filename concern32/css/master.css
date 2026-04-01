@@ -1,0 +1,258 @@
+/*------------------------------------------------------------------
+[Master Stylesheet]
+-------------------------------------------------------------------*/
+
+/* LIBRARIES CSS */
+@import url('bootstrap.css');
+@import url('animate.css');
+
+/* FONTS*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800,800italic,700italic,600italic,400italic,300italic);
+@import url('../assets/font-awesome/css/font-awesome.min.css');
+@import url('../assets/flaticon/flaticon.css');
+
+/* PLUGIN CSS */
+@import url('slider-pro.min.css');
+@import url('jquery.fancybox.css');
+@import url('owl.carousel.css');
+@import url('owl.theme.css');
+@import url('owl.transitions.css');
+@import url('bootstrap-datetimepicker.css');
+@import url('jquery.selectBox.css');
+@import url('fontawesome-stars-o.css');
+
+/* CUSTOM CSS */
+@import url('theme.css');
+@import url('responsive.css');
+@import url('style1.css');
+
+@media only screen and (max-width: 768px) {
+.top-bar-mail{
+           margin: 5px;
+}
+.color-sw-open-1{display: none}
+    .header-logo img {
+    width: 200px !important;
+}
+    .tagline {
+    font-size: 13px;
+    width: 100%;
+    margin-left: 18%;
+}
+    .top-menu{
+            margin-top: -9%;
+    }
+    .tabib{
+            width: 39%!important;
+    }
+    .resp{
+        font-size: 11px;
+    }
+    .map{
+        width: 100%!important;
+    }
+    
+    .img{
+        width: 90%!important;
+    }
+    .a_resp{
+            padding-top: 19px!important;
+             margin: 6%!important;
+            line-height: 27px!important;
+             font-size: 19px!important;
+    }
+    .b_resp{
+        width: 92%!important;
+    }
+    .c_resp{
+        padding: 3%!important;
+            background: rgba(0, 0, 0, 0.61)!important;
+    }
+    .ak_resp{
+        margin-left: 0%!important;
+    }
+    .doctors-item:hover img {
+    transform: scale(1.1);
+}
+     ._gq3r{
+        text-align: center!important;
+         margin-right: 7%;
+    }
+    .preloader img {
+    position: absolute;
+    left: 13%!important;
+    top: 26%;
+}
+    ._anshu{
+        left: 36%!important;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .top-menu .navbar-nav li a {
+        padding: 10px 16px!important;
+        font-size: 15px;
+        color: #455f68;
+        font-weight: 500;
+        border-bottom: 3px solid transparent;
+        transition: all 300ms;
+    }  
+    
+    .im_g{
+        margin-left: -23%;
+    }
+    .d_resp{
+        width: 87%!important;
+        padding-top: 1%!important;
+    }
+    .doctors-item-name {
+    color: #2491d0;
+    font-size: 17px!important;
+    font-weight: 800;
+    margin: 20px 0 2px 0;
+}
+   .doctor-info-position {
+    text-align: center;
+    color: #4c7284;
+    margin-top: 15px;
+    font-size: 14px!important;
+    margin-bottom: 20px;
+    line-height: 24px;
+} 
+    
+    .top-bar-social {
+    float: right;
+    margin: 5px;
+}
+    .top-bar-adress{
+        margin-top: -6%;
+    }
+    .doctors-2 .doctors-item-button .btn {
+    padding: 9px 15px!important;
+    width: 100%;
+}
+    .a_mgl {
+    color: #2491d0;
+    font-size: 16px!important;
+    font-weight: 800;
+    margin: 20px 0 2px 0;
+}
+    .a_mgi {
+    text-align: center;
+    color: #4c7284;
+    margin-top: 14px;
+    font-size: 11px!important;
+    margin-bottom: 20px;
+    line-height: 20px;
+}
+    .a_rep{
+        margin-left: 17%!important;
+    }
+    
+    .tagline {
+    font-size: 11px;
+    margin: 1% 23%!important;
+        width: 100%;
+}
+    .q_new{
+        margin: -3% 0% -11% 7%;
+    }
+    .c_new{
+        margin: 0px 27%!important;
+    }
+    .aki_resp{
+            margin-left: 11%!important;
+    }
+   
+}
+
+/* YOUR CUSTOM STYLES */
+.patient_gallery {
+    padding: 2% 5%;
+}
+.title1{
+		text-align:center;
+		}
+.cont1{
+		margin:5% 0;
+	   }		
+.case_1 {
+    width: 100%;
+    padding: 2%;
+    margin-bottom: 7.5%;
+    border: 3px solid #00acdb;
+}
+
+.rs-mobile-call,.rs-whatsapp-button{
+ display:none;
+}
+.rs-mobile-call{
+ position:fixed;
+ bottom:0;
+ z-index:99;
+ width:100%;
+}
+.rs-mobile-call .left,.rs-mobile-call .right{
+ float:left;
+ display:table;
+ width:50%;
+ margin:0;
+ overflow:hidden;
+}
+.rs-mobile-call a{
+ display:block;
+ padding:6px 12px;
+ text-align:center;
+ color:#fff;
+ background:#382976;
+}
+.rs-mobile-call .right{
+ padding-left:1px;
+}
+.rs-whatsapp-button{
+ position:fixed;
+ right:0;
+ top:50%;
+ width:50px;
+ height:50px;
+ text-align:center;
+ background:#1ebea5;
+ color:#fff;
+ padding:10px;
+ overflow:hidden;
+ z-index:99;
+}
+.rs-whatsapp-button a{
+ color:#fff;
+ font-weight:bold;
+ font-size:2em;
+}
+@media screen and (max-width:481px){
+.rs-mobile-call,.rs-whatsapp-button{
+ display:block;
+}
+
+}
+p,ul,ol{
+ margin-bottom:10px;
+}
+p{
+ text-align:justify;
+}
+img{
+ max-width:100%;
+ padding:8px;
+}
+select.goog-te-combo {
+    appearance: none;
+    line-height: normal;
+    position: relative;
+    background-position: right 10px top 50%;
+    background-repeat: no-repeat;
+    padding-left: 10px; 
+    margin-left: 10px;
+}
+.header-logo img.logo_32{
+    width: 340px;
+    margin-top: -50px;
+}
