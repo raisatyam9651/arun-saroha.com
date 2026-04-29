@@ -24,17 +24,15 @@ $treatmentMap = [
     "spinal-tuberculosis" => "Spinal Tuberculosis Treatment"
 ];
 
-// Detect current treatment from URL
-$currentUri = $_SERVER['REQUEST_URI'];
+// Detect current treatment from URL more robustly
+$currentUri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$uriParts = explode('/', trim($currentUri, '/'));
 $activeSlug = "neurosurgeon"; // Default
 $activeName = "Neurosurgeon";
 
-foreach ($treatmentMap as $slug => $name) {
-    if (strpos($currentUri, '/' . $slug . '/') !== false) {
-        $activeSlug = $slug;
-        $activeName = $name;
-        break;
-    }
+if (isset($uriParts[0]) && array_key_exists($uriParts[0], $treatmentMap)) {
+    $activeSlug = $uriParts[0];
+    $activeName = $treatmentMap[$activeSlug];
 }
 
 // Current State and Area detection (assuming they are set in the master template)
