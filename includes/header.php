@@ -57,6 +57,13 @@
     }
   ]
   </script>
+  
+  <?php 
+    $headerCodePath = __DIR__ . '/header-code.php';
+    if (file_exists($headerCodePath)) {
+        include $headerCodePath;
+    }
+  ?>
 </head>
 <body>
 
