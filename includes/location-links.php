@@ -37,41 +37,52 @@ foreach ($treatmentMap as $slug => $name) {
     }
 }
 
+// Current State and Area detection (assuming they are set in the master template)
+$pageState = isset($state) ? $state : 'India';
+$pageArea = isset($area) ? $area : 'India';
+
 // States list
-$states = [
-    "andhra-pradesh" => "Andhra Pradesh",
-    "arunachal-pradesh" => "Arunachal Pradesh",
-    "assam" => "Assam",
-    "bihar" => "Bihar",
-    "chhattisgarh" => "Chhattisgarh",
-    "goa" => "Goa",
-    "gujarat" => "Gujarat",
-    "haryana" => "Haryana",
-    "himachal-pradesh" => "Himachal Pradesh",
-    "jharkhand" => "Jharkhand",
-    "karnataka" => "Karnataka",
-    "kerala" => "Kerala",
-    "madhya-pradesh" => "Madhya Pradesh",
-    "maharashtra" => "Maharashtra",
-    "manipur" => "Manipur",
-    "meghalaya" => "Meghalaya",
-    "mizoram" => "Mizoram",
-    "nagaland" => "Nagaland",
-    "odisha" => "Odisha",
-    "punjab" => "Punjab",
-    "rajasthan" => "Rajasthan",
-    "sikkim" => "Sikkim",
-    "tamil-nadu" => "Tamil Nadu",
-    "telangana" => "Telangana",
-    "tripura" => "Tripura",
-    "uttar-pradesh" => "Uttar Pradesh",
-    "uttarakhand" => "Uttarakhand",
-    "west-bengal" => "West Bengal",
-    "delhi" => "Delhi",
-    "jammu-kashmir" => "Jammu & Kashmir",
-    "ladakh" => "Ladakh",
-    "chandigarh" => "Chandigarh"
+$allStates = [
+    "andhra-pradesh" => "Andhra Pradesh", "arunachal-pradesh" => "Arunachal Pradesh", "assam" => "Assam", "bihar" => "Bihar",
+    "chhattisgarh" => "Chhattisgarh", "goa" => "Goa", "gujarat" => "Gujarat", "haryana" => "Haryana",
+    "himachal-pradesh" => "Himachal Pradesh", "jharkhand" => "Jharkhand", "karnataka" => "Karnataka", "kerala" => "Kerala",
+    "madhya-pradesh" => "Madhya Pradesh", "maharashtra" => "Maharashtra", "manipur" => "Manipur", "meghalaya" => "Meghalaya",
+    "mizoram" => "Mizoram", "nagaland" => "Nagaland", "odisha" => "Odisha", "punjab" => "Punjab",
+    "rajasthan" => "Rajasthan", "sikkim" => "Sikkim", "tamil-nadu" => "Tamil Nadu", "telangana" => "Telangana",
+    "tripura" => "Tripura", "uttar-pradesh" => "Uttar Pradesh", "uttarakhand" => "Uttarakhand", "west-bengal" => "West Bengal",
+    "delhi" => "Delhi", "jammu-kashmir" => "Jammu & Kashmir", "ladakh" => "Ladakh", "chandigarh" => "Chandigarh"
 ];
+
+// Determine if we should show cities or states
+$showCities = ($pageState != 'India' && $pageArea == $pageState);
+$displayList = [];
+$heading = "Serving Patients Across India";
+
+if ($showCities) {
+    $heading = "Serving Patients in " . $pageState;
+    // Attempt to dynamically find districts in the current state folder
+    $stateSlug = strtolower(str_replace([' ', '&'], ['-', ''], $pageState));
+    $path = __DIR__ . '/../' . $activeSlug . '/' . $stateSlug . '/';
+    
+    if (is_dir($path)) {
+        $dirs = array_filter(glob($path . '*'), 'is_dir');
+        foreach ($dirs as $dir) {
+            if (file_exists($dir . '/index.php')) {
+                $citySlug = basename($dir);
+                $cityName = ucwords(str_replace('-', ' ', $citySlug));
+                $displayList[$activeSlug . '/' . $stateSlug . '/' . $citySlug . '/'] = $cityName;
+            }
+        }
+    }
+}
+
+// If no cities found or not on a state page, show states
+if (empty($displayList)) {
+    $heading = "Serving Patients Across India";
+    foreach ($allStates as $slug => $name) {
+        $displayList[$activeSlug . '/' . $slug . '/'] = $name;
+    }
+}
 ?>
 
 <section class="location-links-section">
@@ -79,7 +90,7 @@ $states = [
     <div class="location-header" id="toggleLocations">
       <div class="location-title">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="location-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        <h2>Serving Patients Across India</h2>
+        <h2><?php echo $heading; ?></h2>
       </div>
       <button class="toggle-btn">
         <span id="toggleText">Show Locations</span>
@@ -88,13 +99,23 @@ $states = [
     </div>
 
     <div class="location-grid" id="locationGrid">
+      <!-- Always show India link -->
       <a href="<?php echo $root; ?><?php echo ($activeSlug == 'neurosurgeon') ? 'index.php' : $activeSlug . '/'; ?>" class="location-item">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pin-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
         Best <?php echo $activeName; ?> in India
       </a>
+      
+      <?php if ($showCities): ?>
+        <!-- Show State link when on state/city page -->
+        <a href="<?php echo $root . $activeSlug . '/' . strtolower(str_replace([' ', '&'], ['-', ''], $pageState)) . '/'; ?>" class="location-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pin-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Best <?php echo $activeName; ?> in <?php echo $pageState; ?>
+        </a>
+      <?php endif; ?>
+
       <?php
-      foreach ($states as $slug => $name) {
-        echo '<a href="' . $root . $activeSlug . '/' . $slug . '/" class="location-item">
+      foreach ($displayList as $urlPath => $name) {
+        echo '<a href="' . $root . $urlPath . '" class="location-item">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pin-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 Best ' . $activeName . ' in ' . $name . '
               </a>';
