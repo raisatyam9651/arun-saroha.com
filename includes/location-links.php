@@ -12,6 +12,10 @@
     </div>
 
     <div class="location-grid" id="locationGrid">
+      <a href="<?php echo $root; ?>index.php" class="location-item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pin-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        Best Neurosurgeon in India
+      </a>
       <?php
       $states = [
         "andhra-pradesh" => "Andhra Pradesh",
@@ -49,7 +53,7 @@
       ];
 
       foreach ($states as $slug => $name) {
-        echo '<a href="' . $root . 'brain-surgery/' . $slug . '/" class="location-item">
+        echo '<a href="' . $root . 'neurosurgeon/' . $slug . '/" class="location-item">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pin-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                 Best Neurosurgeon in ' . $name . '
               </a>';
