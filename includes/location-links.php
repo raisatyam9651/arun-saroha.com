@@ -35,7 +35,7 @@ if (isset($uriParts[0]) && array_key_exists($uriParts[0], $treatmentMap)) {
     $activeName = $treatmentMap[$activeSlug];
 }
 
-// Current State and Area detection (assuming they are set in the master template)
+// Current State and Area detection
 $pageState = isset($state) ? $state : 'India';
 $pageArea = isset($area) ? $area : 'India';
 
@@ -51,14 +51,13 @@ $allStates = [
     "delhi" => "Delhi", "jammu-kashmir" => "Jammu & Kashmir", "ladakh" => "Ladakh", "chandigarh" => "Chandigarh"
 ];
 
-// Determine if we should show cities or states
-$showCities = ($pageState != 'India' && $pageArea == $pageState);
+// Determine if we should show districts or states
+$showDistricts = ($pageState != 'India' && $pageArea == $pageState);
 $displayList = [];
 $heading = "Serving Patients Across India";
 
-if ($showCities) {
+if ($showDistricts) {
     $heading = "Serving Patients in " . $pageState;
-    // Attempt to dynamically find districts in the current state folder
     $stateSlug = strtolower(str_replace([' ', '&'], ['-', ''], $pageState));
     $path = __DIR__ . '/../' . $activeSlug . '/' . $stateSlug . '/';
     
@@ -74,7 +73,7 @@ if ($showCities) {
     }
 }
 
-// If no cities found or not on a state page, show states
+// If no districts found or not on a state page, show states
 if (empty($displayList)) {
     $heading = "Serving Patients Across India";
     foreach ($allStates as $slug => $name) {
@@ -97,16 +96,14 @@ if (empty($displayList)) {
     </div>
 
     <div class="location-grid" id="locationGrid">
-      <!-- Always show India link -->
-      <a href="<?php echo $root; ?><?php echo ($activeSlug == 'neurosurgeon') ? 'index.php' : $activeSlug . '/'; ?>" class="location-item">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pin-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      <!-- India link as the Primary Highlighted Card -->
+      <a href="<?php echo $root; ?><?php echo ($activeSlug == 'neurosurgeon') ? 'index.php' : $activeSlug . '/'; ?>" class="location-item highlight-card">
         Best <?php echo $activeName; ?> in India
       </a>
       
-      <?php if ($showCities): ?>
-        <!-- Show State link when on state/city page -->
-        <a href="<?php echo $root . $activeSlug . '/' . strtolower(str_replace([' ', '&'], ['-', ''], $pageState)) . '/'; ?>" class="location-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pin-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+      <?php if ($showDistricts): ?>
+        <!-- State link as a secondary highlight if on state/city page -->
+        <a href="<?php echo $root . $activeSlug . '/' . strtolower(str_replace([' ', '&'], ['-', ''], $pageState)) . '/'; ?>" class="location-item highlight-card">
           Best <?php echo $activeName; ?> in <?php echo $pageState; ?>
         </a>
       <?php endif; ?>
@@ -114,7 +111,7 @@ if (empty($displayList)) {
       <?php
       foreach ($displayList as $urlPath => $name) {
         echo '<a href="' . $root . $urlPath . '" class="location-item">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="pin-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                <span class="bullet">•</span>
                 Best ' . $activeName . ' in ' . $name . '
               </a>';
       }
@@ -125,10 +122,10 @@ if (empty($displayList)) {
 
 <style>
 .location-links-section {
-  background: #0f172a;
-  padding: 40px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
+  background: #f8fafc;
+  padding: 60px 0;
+  border-top: 1px solid #e2e8f0;
+  color: #1e293b;
 }
 
 .location-header {
@@ -136,9 +133,9 @@ if (empty($displayList)) {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  margin-bottom: 0;
-  padding-bottom: 10px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #e2e8f0;
 }
 
 .location-title {
@@ -148,34 +145,37 @@ if (empty($displayList)) {
 }
 
 .location-title h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
+  font-size: 1.6rem;
+  font-weight: 800;
   margin: 0;
-  color: #f8fafc;
+  color: #0f172a;
+  letter-spacing: -0.02em;
 }
 
 .location-icon {
-  color: #3b82f6;
+  color: #1e3a8a;
 }
 
 .toggle-btn {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: #cbd5e1;
-  padding: 8px 20px;
-  border-radius: 50px;
+  background: #fff;
+  border: 1px solid #cbd5e1;
+  color: #475569;
+  padding: 10px 24px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
-  font-size: 0.9rem;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
 }
 
 .toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #3b82f6;
+  background: #f1f5f9;
+  border-color: #1e3a8a;
+  color: #1e3a8a;
 }
 
 .chevron-icon {
@@ -188,48 +188,78 @@ if (empty($displayList)) {
 
 .location-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
   margin-top: 30px;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .location-grid.show {
-  max-height: 2000px;
-  transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
+  max-height: 3000px;
+  transition: max-height 0.8s ease-in-out;
 }
 
 .location-item {
-  color: #94a3b8;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  font-weight: 500;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: all 0.2s ease;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 15px;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  line-height: 1.4;
 }
 
 .location-item:hover {
-  color: #3b82f6;
-  background: rgba(59, 130, 246, 0.05);
-  transform: translateX(5px);
+  border-color: #1e3a8a;
+  color: #1e3a8a;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
-.pin-icon {
-  color: #3b82f6;
-  opacity: 0.7;
+.location-item.highlight-card {
+  background: #1e3a8a;
+  border-color: #1e3a8a;
+  color: #ffffff;
+  font-weight: 700;
 }
 
-@media (max-width: 768px) {
+.location-item.highlight-card:hover {
+  background: #1e40af;
+}
+
+.bullet {
+  color: #1e3a8a;
+  margin-right: 8px;
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+.highlight-card .bullet {
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
+  .location-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
   .location-grid {
     grid-template-columns: 1fr;
   }
   .location-title h2 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
 </style>
