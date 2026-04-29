@@ -1,24 +1,10 @@
-# Ensure index.php is the default directory index
-DirectoryIndex index.php index.html
+RewriteEngine on 
+RewriteCond %{REQUEST_FILENAME} !-d 
+RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteRule ^(.*)$ $1.php
 
-# Prevent directory listing
-Options -Indexes
-
-<IfModule mod_rewrite.c>
-RewriteEngine On
-
-# Redirect to HTTPS
-RewriteCond %{HTTPS} off
-RewriteCond %{HTTP:X-Forwarded-Proto} !https
-RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
-
-# Redirect direct .php requests to extensionless URLs
-RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.php
-RewriteRule ^/?(.*)\.php$ /$1 [L,R=301]
-
-# Remove .php extension from URLs internally
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.php -f
-RewriteRule ^(.*)$ $1.php [L]
-
-</IfModule>
+# To externally redirect /dir/foo.php to /dir/foo
+RewriteCond %{REQUEST_METHOD} !POST
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s([^.]+)\.php [NC]
+RewriteRule ^ %1 [R=301,L,NE]
+Redirect 301 "/index" "https://drarunsaroha.com/" 
