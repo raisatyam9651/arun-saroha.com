@@ -188,64 +188,57 @@ if (empty($displayList)) {
 
 .location-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 16px;
-  margin-top: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 25px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .location-grid.show {
-  max-height: 3000px;
+  max-height: 4000px;
   transition: max-height 0.8s ease-in-out;
 }
 
 .location-item {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  color: #64748b;
+  color: #475569;
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 500;
   display: flex;
   align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px 15px;
-  border-radius: 12px;
-  transition: all 0.25s ease;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  padding: 8px 0;
+  transition: all 0.2s ease;
   line-height: 1.4;
 }
 
 .location-item:hover {
-  border-color: #1e3a8a;
   color: #1e3a8a;
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-  transform: translateY(-2px);
+  transform: translateX(5px);
 }
 
 .location-item.highlight-card {
-  background: #1e3a8a;
-  border-color: #1e3a8a;
-  color: #ffffff;
+  color: #1e3a8a;
   font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 2px solid #1e3a8a;
+  width: fit-content;
+  padding-bottom: 4px;
+  margin-bottom: 10px;
 }
 
 .location-item.highlight-card:hover {
-  background: #1e40af;
+  color: #1e40af;
+  border-color: #1e40af;
 }
 
 .bullet {
   color: #1e3a8a;
-  margin-right: 8px;
+  margin-right: 12px;
   font-weight: 900;
   font-size: 1.2rem;
-}
-
-.highlight-card .bullet {
-  color: #fff;
 }
 
 @media (max-width: 1024px) {
