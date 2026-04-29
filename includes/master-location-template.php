@@ -454,21 +454,6 @@
     </div>
   </section>
 
-  <!-- Regional Linking (If provided) -->
-  <?php if (isset($locationLinks) && !empty($locationLinks)): ?>
-  <section class="area-links-section bg-light">
-    <div class="container">
-      <div class="section-title text-center">
-        <h2>Explore Service Areas in <?php echo $area; ?></h2>
-        <p>Providing specialized neurosurgical care across <?php echo $area; ?>.</p>
-      </div>
-      <div class="area-links-grid">
-        <?php foreach ($locationLinks as $linkName => $linkUrl): ?>
-          <div class="area-link-item"><a href="<?php echo $linkUrl; ?>"><?php echo $linkName; ?></a></div>
-        <?php endforeach; ?>
-      </div>
-    </div>
-  </section>
-  <?php endif; ?>
+
 
 <?php include_once __DIR__ . '/footer.php'; ?>

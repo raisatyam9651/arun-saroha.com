@@ -185,29 +185,5 @@ include __DIR__ . '/header.php';
     </div>
   </section>
 
-  <!-- Internal Linking -->
-  <section class="locations-linking bg-light" style="padding: 60px 0; border-top: 1px solid rgba(0,0,0,0.05);">
-    <div class="container">
-      <div class="section-title text-center" style="margin-bottom: 30px;">
-        <h2>Brain Surgery Access in <?php echo $state; ?></h2>
-      </div>
-      <div class="location-links-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
-        <?php
-        $base_url = "/brain-surgery/";
-        $state_slug = strtolower(str_replace(' ', '-', $state));
-        $city_dirs = glob(__DIR__ . '/../brain-surgery/'.$state_slug.'/*', GLOB_ONLYDIR);
-        echo '<a href="'.$base_url.$state_slug.'/" style="padding: 10px; background: var(--primary); border-radius: 8px; text-align: center; color: white; font-weight: 600; font-size: 0.9rem;">Brain Surgery in '.$state.'</a>';
-        foreach($city_dirs as $dir) {
-            $slug = basename($dir);
-            $name = ucwords(str_replace('-', ' ', $slug));
-            if($name != $area) {
-                echo '<a href="'.$base_url.$state_slug.'/'.$slug.'/" style="padding: 10px; background: white; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.02); color: var(--text); border: 1px solid rgba(0,0,0,0.05); font-size: 0.9rem; transition: var(--transition);">Brain Surgeon in '.$name.'</a>';
-            }
-        }
-        ?>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <?php include __DIR__ . '/footer.php'; ?>

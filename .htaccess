@@ -1,7 +1,7 @@
 # Ensure index.php is the default directory index
 DirectoryIndex index.php index.html
 
-RewriteEngine on 
+RewriteEngine on
 
 # Redirect HTTP to HTTPS
 RewriteCond %{HTTPS} off
@@ -13,6 +13,46 @@ RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^\ ]+)\.php
 RewriteRule ^/?(.*)\.php$ /$1 [L,R=301]
 
 # Remove .php extension from URLs internally
-RewriteCond %{REQUEST_FILENAME} !-d 
-RewriteCond %{REQUEST_FILENAME}\.php -f 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
 RewriteRule ^(.*)$ $1.php [L]
+
+# Old URL redirects (301 Permanent Redirects)
+RewriteRule ^about\.php$ /about [L,R=301]
+RewriteRule ^about/$ /about [L,R=301]
+RewriteRule ^appointment\.html$ /contact [L,R=301]
+RewriteRule ^back-pain-treatment-in-india\.php$ /back-pain-treatment [L,R=301]
+RewriteRule ^back-pain-treatment-in-india/$ /back-pain-treatment [L,R=301]
+RewriteRule ^best-back-pain-doctor/$ /back-pain-treatment [L,R=301]
+RewriteRule ^best-brain-tumor-surgeon-in-gurgaon/$ /brain-tumor/haryana/gurgaon/ [L,R=301]
+RewriteRule ^best-disc-replacement-surgeon/$ /disc-replacement [L,R=301]
+RewriteRule ^best-headache-treatment-in-India\.php$ /headache [L,R=301]
+RewriteRule ^best-neurosurgeon-in-gurgaon/$ /neurosurgeon/haryana/gurgaon/ [L,R=301]
+RewriteRule ^best-neurosurgeon-in-the-world/$ / [L,R=301]
+RewriteRule ^best-spine-surgeon-in-delhi/$ /neurosurgeon/delhi/ [L,R=301]
+RewriteRule ^best-spine-surgeon-in-gurgaon/$ /neurosurgeon/haryana/gurgaon/ [L,R=301]
+RewriteRule ^best-spine-surgeon-in-world/$ / [L,R=301]
+RewriteRule ^best-treatment-cervical-spondylosis-in-India\.php$ /cervical-spondylosis [L,R=301]
+RewriteRule ^best-treatment-cervical-spondylosis-in-India/$ /cervical-spondylosis [L,R=301]
+RewriteRule ^blog/$ /blog [L,R=301]
+RewriteRule ^blood-clot-brain-treatment-in-India\.php$ /blood-clot [L,R=301]
+RewriteRule ^blood-clot-brain-treatment-in-India/$ /blood-clot [L,R=301]
+RewriteRule ^brain-aneurysm-treatment-in-India\.php$ /brain-aneurysm [L,R=301]
+RewriteRule ^brain-surgery-in-India\.php$ /brain-surgery [L,R=301]
+RewriteRule ^brain-tumor-surgery-in-india\.php$ /brain-tumor [L,R=301]
+RewriteRule ^cervical-spine-surgery-in-India\.php$ /cervical-spine-surgery [L,R=301]
+RewriteRule ^contact\.php$ /contact [L,R=301]
+RewriteRule ^contact/$ /contact [L,R=301]
+RewriteRule ^degenerative-disc-disease-treatment-in-India\.php$ /degenerative-disc [L,R=301]
+RewriteRule ^disc-replacement-surgery-in-India\.php$ /disc-replacement [L,R=301]
+RewriteRule ^doctor-details\.html$ /about [L,R=301]
+RewriteRule ^doctor\.html$ /about [L,R=301]
+RewriteRule ^herniated-disc-surgery-in-India\.php$ /herniated-disc [L,R=301]
+RewriteRule ^international\.php$ /international-patients [L,R=301]
+RewriteRule ^login\.html$ / [L,R=301]
+RewriteRule ^scoliosis-treatment-in-India\.php$ /scoliosis [L,R=301]
+RewriteRule ^sign-up\.html$ / [L,R=301]
+RewriteRule ^spinal-stenosis-surgery-in-India\.php$ /spinal-stenosis [L,R=301]
+RewriteRule ^testimonials\.html$ /#testimonials [L,R=301]
+RewriteRule ^top-neurosurgeon/$ / [L,R=301]
+RewriteRule ^top-spine-surgeon/$ / [L,R=301]

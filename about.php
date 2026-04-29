@@ -209,8 +209,6 @@
     </div>
   </section>
 
-<?php include 'includes/footer.php'; ?>
-
   <!-- FAQ Section -->
   <section id="faq" class="faq-section py-8">
     <div class="container">
@@ -254,4 +252,7 @@
       </div>
     </div>
   </section>
+
+<?php include 'includes/footer.php'; ?>
+
 

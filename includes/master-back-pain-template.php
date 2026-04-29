@@ -371,53 +371,6 @@ $page_description = "Seeking the best back pain treatment in " . $area . "? Dr. 
     </div>
   </section>
 
-  <!-- SEO Internal Linking Section -->
-  <section class="locations-linking bg-light" style="padding: 60px 0; border-top: 1px solid rgba(0,0,0,0.05);">
-    <div class="container">
-      <div class="section-title text-center" style="margin-bottom: 30px;">
-        <span class="badge">Regional Access</span>
-        <?php if($state == "India"): ?>
-          <h2>Back Pain Treatment Across India</h2>
-        <?php else: ?>
-          <h2>Other Locations in <?php echo $state; ?></h2>
-        <?php endif; ?>
-      </div>
-      
-      <div class="location-links-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
-        <?php
-        $current_path = $_SERVER['REQUEST_URI'];
-        $base_url = "/back-pain-treatment/";
-        
-        if($state == "India") {
-            // List all states
-            $state_dirs = glob(__DIR__ . '/../back-pain-treatment/*', GLOB_ONLYDIR);
-            foreach($state_dirs as $dir) {
-                $slug = basename($dir);
-                $name = ucwords(str_replace('-', ' ', $slug));
-                echo '<a href="'.$base_url.$slug.'/" style="padding: 10px; background: white; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.02); color: var(--text); border: 1px solid rgba(0,0,0,0.05); font-size: 0.9rem; transition: var(--transition);" onmouseover="this.style.borderColor=\'var(--primary)\'; this.style.color=\'var(--primary)\';" onmouseout="this.style.borderColor=\'rgba(0,0,0,0.05)\'; this.style.color=\'var(--text)\';">Back Pain Treatment in '.$name.'</a>';
-            }
-        } else {
-            // List cities in the current state
-            $state_slug = strtolower(str_replace(' ', '-', $state));
-            $city_dirs = glob(__DIR__ . '/../back-pain-treatment/'.$state_slug.'/*', GLOB_ONLYDIR);
-            
-            // Link back to state page first
-            echo '<a href="'.$base_url.$state_slug.'/" style="padding: 10px; background: var(--primary); border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.02); color: white; font-weight: 600; font-size: 0.9rem;">Back Pain Treatment in '.$state.'</a>';
-            
-            foreach($city_dirs as $dir) {
-                $slug = basename($dir);
-                $name = ucwords(str_replace('-', ' ', $slug));
-                // Don't link to the same city we are currently on
-                if($name != $area) {
-                    echo '<a href="'.$base_url.$state_slug.'/'.$slug.'/" style="padding: 10px; background: white; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.02); color: var(--text); border: 1px solid rgba(0,0,0,0.05); font-size: 0.9rem; transition: var(--transition);" onmouseover="this.style.borderColor=\'var(--primary)\'; this.style.color=\'var(--primary)\';" onmouseout="this.style.borderColor=\'rgba(0,0,0,0.05)\'; this.style.color=\'var(--text)\';">Back Pain Treatment in '.$name.'</a>';
-                }
-            }
-        }
-        ?>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <?php include __DIR__ . '/footer.php'; ?>
 

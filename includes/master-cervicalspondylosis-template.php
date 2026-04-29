@@ -92,26 +92,6 @@ include __DIR__ . '/header.php';
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section id="faq" class="faq-section" style="padding: 100px 0; background: var(--white);">
-    <div class="container">
-      <div class="section-title text-center">
-        <span class="badge">Patient Education</span>
-        <h2>FAQs about Cervical Spondylosis in <?php echo $area; ?></h2>
-      </div>
-      <div class="faq-grid mt-4" style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px;">
-        <div class="faq-item" style="background: var(--bg-light); padding: 30px; border-radius: 15px; border: 1px solid rgba(0,0,0,0.03);">
-          <h3 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 15px;">Is cervical spondylosis permanent?</h3>
-          <p>The structural changes are typically permanent as they are age-related. However, the symptoms (pain and stiffness) can be managed effectively through clinical treatment and lifestyle changes in <?php echo $area; ?>.</p>
-        </div>
-        <div class="faq-item" style="background: var(--bg-light); padding: 30px; border-radius: 15px; border: 1px solid rgba(0,0,0,0.03);">
-          <h3 style="font-size: 1.2rem; color: var(--primary); margin-bottom: 15px;">When is surgery needed for spondylosis?</h3>
-          <p>Surgery is recommended if your symptoms are severe or if the condition is compressing your spinal cord (myelopathy) or nerve roots (radiculopathy), which can lead to permanent damage if left untreated.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact Section -->
   <section id="contact" class="contact-section" style="padding: 100px 0; background: var(--bg-light);">
     <div class="container">
@@ -201,30 +181,6 @@ include __DIR__ . '/header.php';
           <h3 style="font-size: 1.1rem; color: var(--primary); margin-bottom: 12px;">Will neck surgery affect my voice or swallowing?</h3>
           <p style="font-size: 0.95rem;">Temporary hoarseness and mild difficulty swallowing can occur due to surgical retraction but typically resolve within days to weeks. Permanent effects are extremely rare with Dr. Saroha's precise technique.</p>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Internal Linking -->
-  <section class="locations-linking bg-light" style="padding: 60px 0; border-top: 1px solid rgba(0,0,0,0.05);">
-    <div class="container">
-      <div class="section-title text-center" style="margin-bottom: 30px;">
-        <h2>Spondylosis Treatment in <?php echo $state; ?></h2>
-      </div>
-      <div class="location-links-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 15px;">
-        <?php
-        $base_url = "/cervical-spondylosis/";
-        $state_slug = strtolower(str_replace(' ', '-', $state));
-        $city_dirs = glob(__DIR__ . '/../cervical-spondylosis/'.$state_slug.'/*', GLOB_ONLYDIR);
-        echo '<a href="'.$base_url.$state_slug.'/" style="padding: 10px; background: var(--primary); border-radius: 8px; text-align: center; color: white; font-weight: 600; font-size: 0.9rem;">Neck Care in '.$state.'</a>';
-        foreach($city_dirs as $dir) {
-            $slug = basename($dir);
-            $name = ucwords(str_replace('-', ' ', $slug));
-            if($name != $area) {
-                echo '<a href="'.$base_url.$state_slug.'/'.$slug.'/" style="padding: 10px; background: white; border-radius: 8px; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.02); color: var(--text); border: 1px solid rgba(0,0,0,0.05); font-size: 0.9rem; transition: var(--transition);">Neck Treatment in '.$name.'</a>';
-            }
-        }
-        ?>
       </div>
     </div>
   </section>
