@@ -1,4 +1,5 @@
-  <!-- Footer -->
+  <?php include_once __DIR__ . '/location-links.php'; ?>
+<!-- Footer -->
   <footer>
     <div class="container footer-grid">
       <div class="footer-col">
