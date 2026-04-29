@@ -52,7 +52,7 @@ $allStates = [
 ];
 
 // Determine if we should show districts or states
-$showDistricts = ($pageState != 'India' && $pageArea == $pageState);
+$showDistricts = ($pageState != 'India');
 $displayList = [];
 $heading = "Serving Patients Across India";
 
