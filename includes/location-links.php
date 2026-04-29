@@ -9,7 +9,7 @@ $treatmentMap = [
     "brain-surgery" => "Brain Surgery",
     "brain-tumor" => "Brain Tumor Surgery",
     "cervical-spine-surgery" => "Cervical Spine Surgery",
-    "cervical-spondylosis" => "Cervical Spondylosis Treatment",
+    "cervical-spondylosis" => "Spondylosis Treatment",
     "degenerative-disc" => "Degenerative Disc Treatment",
     "disc-replacement" => "Disc Replacement Surgery",
     "endoscopic-spine-tumor" => "Endoscopic Spine Tumor Surgery",
@@ -54,10 +54,9 @@ $allStates = [
 // Determine if we should show districts or states
 $showDistricts = ($pageState != 'India');
 $displayList = [];
-$heading = "Serving Patients Across India";
+$heading = $activeName . " in " . $pageState;
 
 if ($showDistricts) {
-    $heading = "Serving Patients in " . $pageState;
     $stateSlug = strtolower(str_replace([' ', '&'], ['-', ''], $pageState));
     $path = __DIR__ . '/../' . $activeSlug . '/' . $stateSlug . '/';
     
@@ -75,7 +74,7 @@ if ($showDistricts) {
 
 // If no districts found or not on a state page, show states
 if (empty($displayList)) {
-    $heading = "Serving Patients Across India";
+    $heading = $activeName . " in India";
     foreach ($allStates as $slug => $name) {
         $displayList[$activeSlug . '/' . $slug . '/'] = $name;
     }
@@ -84,35 +83,20 @@ if (empty($displayList)) {
 
 <section class="location-links-section">
   <div class="container">
-    <div class="location-header" id="toggleLocations">
-      <div class="location-title">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="location-icon"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-        <h2><?php echo $heading; ?></h2>
-      </div>
-      <button class="toggle-btn">
-        <span id="toggleText">Show Locations</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="chevron-icon"><polyline points="6 9 12 15 18 9"></polyline></svg>
-      </button>
+    <div class="location-header-centered">
+      <h2><?php echo $heading; ?></h2>
     </div>
 
-    <div class="location-grid" id="locationGrid">
-      <!-- India link as the Primary Highlighted Card -->
-      <a href="<?php echo $root; ?><?php echo ($activeSlug == 'neurosurgeon') ? 'index.php' : $activeSlug . '/'; ?>" class="location-item highlight-card">
-        Best <?php echo $activeName; ?> in India
+    <div class="location-grid-premium">
+      <!-- Highlighted Primary Card -->
+      <a href="<?php echo $root; ?><?php echo ($activeSlug == 'neurosurgeon') ? 'index.php' : $activeSlug . '/'; ?>" class="location-card highlight-blue">
+        <?php echo $activeName; ?> in <?php echo $pageState; ?>
       </a>
-      
-      <?php if ($showDistricts): ?>
-        <!-- State link as a secondary highlight if on state/city page -->
-        <a href="<?php echo $root . $activeSlug . '/' . strtolower(str_replace([' ', '&'], ['-', ''], $pageState)) . '/'; ?>" class="location-item highlight-card">
-          Best <?php echo $activeName; ?> in <?php echo $pageState; ?>
-        </a>
-      <?php endif; ?>
 
       <?php
       foreach ($displayList as $urlPath => $name) {
-        echo '<a href="' . $root . $urlPath . '" class="location-item">
-                <span class="bullet">•</span>
-                Best ' . $activeName . ' in ' . $name . '
+        echo '<a href="' . $root . $urlPath . '" class="location-card">
+                ' . $activeName . ' in ' . $name . '
               </a>';
       }
       ?>
@@ -122,152 +106,85 @@ if (empty($displayList)) {
 
 <style>
 .location-links-section {
-  background: #f8fafc;
-  padding: 60px 0;
-  border-top: 1px solid #e2e8f0;
-  color: #1e293b;
+  background: #fdfdfd;
+  padding: 80px 0;
+  border-top: 1px solid #eee;
 }
 
-.location-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
-  border-bottom: 2px solid #e2e8f0;
+.location-header-centered {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-.location-title {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.location-title h2 {
-  font-size: 1.6rem;
+.location-header-centered h2 {
+  font-size: 2.5rem;
   font-weight: 800;
+  color: #1a202c;
   margin: 0;
-  color: #0f172a;
-  letter-spacing: -0.02em;
 }
 
-.location-icon {
-  color: #1e3a8a;
-}
-
-.toggle-btn {
-  background: #fff;
-  border: 1px solid #cbd5e1;
-  color: #475569;
-  padding: 10px 24px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: inherit;
-  font-weight: 600;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-}
-
-.toggle-btn:hover {
-  background: #f1f5f9;
-  border-color: #1e3a8a;
-  color: #1e3a8a;
-}
-
-.chevron-icon {
-  transition: transform 0.3s ease;
-}
-
-.toggle-active .chevron-icon {
-  transform: rotate(180deg);
-}
-
-.location-grid {
+.location-grid-premium {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   gap: 12px;
-  margin-top: 25px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.location-grid.show {
-  max-height: 4000px;
-  transition: max-height 0.8s ease-in-out;
-}
-
-.location-item {
-  color: #475569;
+.location-card {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  color: #4a5568;
   text-decoration: none;
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
   align-items: center;
-  padding: 6px 0;
+  justify-content: center;
+  text-align: center;
+  padding: 18px 10px;
+  border-radius: 6px;
   transition: all 0.2s ease;
-  line-height: 1.4;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  min-height: 80px;
 }
 
-.location-item:hover {
-  color: #1e3a8a;
-  transform: translateX(3px);
+.location-card:hover {
+  border-color: #cbd5e0;
+  color: #1a202c;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
 }
 
-.location-item.highlight-card {
-  color: #1e3a8a;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding-bottom: 4px;
-  margin-bottom: 5px;
+.location-card.highlight-blue {
+  background: #0d3b66; /* Matching the dark blue in reference image */
+  border-color: #0d3b66;
+  color: #ffffff;
 }
 
-.location-item.highlight-card:hover {
-  color: #1e40af;
-  border-color: #1e40af;
+.location-card.highlight-blue:hover {
+  background: #0a2e50;
 }
 
-.bullet {
-  color: #1e3a8a;
-  margin-right: 12px;
-  font-weight: 900;
-  font-size: 1.2rem;
+@media (max-width: 1200px) {
+  .location-grid-premium {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
-@media (max-width: 1024px) {
-  .location-grid {
+@media (max-width: 900px) {
+  .location-grid-premium {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .location-header-centered h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .location-grid-premium {
     grid-template-columns: repeat(2, 1fr);
   }
-}
-
-@media (max-width: 640px) {
-  .location-grid {
-    grid-template-columns: 1fr;
-  }
-  .location-title h2 {
-    font-size: 1.3rem;
+  .location-header-centered h2 {
+    font-size: 1.5rem;
   }
 }
 </style>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const toggleBtn = document.getElementById('toggleLocations');
-  const locationGrid = document.getElementById('locationGrid');
-  const toggleText = document.getElementById('toggleText');
-  const toggleIconContainer = document.querySelector('.toggle-btn');
-
-  if (toggleBtn && locationGrid) {
-    toggleBtn.addEventListener('click', () => {
-      const isShowing = locationGrid.classList.toggle('show');
-      toggleIconContainer.classList.toggle('toggle-active');
-      toggleText.textContent = isShowing ? 'Hide Locations' : 'Show Locations';
-    });
-  }
-});
-</script>
