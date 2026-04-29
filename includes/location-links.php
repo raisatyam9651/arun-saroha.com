@@ -204,18 +204,18 @@ if (empty($displayList)) {
 .location-item {
   color: #475569;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 0.85rem;
   font-weight: 500;
   display: flex;
   align-items: center;
-  padding: 8px 0;
+  padding: 6px 0;
   transition: all 0.2s ease;
   line-height: 1.4;
 }
 
 .location-item:hover {
   color: #1e3a8a;
-  transform: translateX(5px);
+  transform: translateX(3px);
 }
 
 .location-item.highlight-card {
@@ -223,10 +223,8 @@ if (empty($displayList)) {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  border-bottom: 2px solid #1e3a8a;
-  width: fit-content;
   padding-bottom: 4px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .location-item.highlight-card:hover {
