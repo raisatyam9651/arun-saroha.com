@@ -200,7 +200,7 @@ $page_description = "Expert headache and migraine treatment in " . $area . " by 
           </div>
         </div>
         <div class="contact-form-wrapper">
-          <form class="contact-form" action="#" method="POST">
+          <form class="contact-form" accept-charset='UTF-8' action='https://app.formester.com/forms/8b968eed-e587-4ac1-9b4a-0c508b75c1cc/submissions' method='POST'>
             <div class="form-row">
               <div class="form-group"><label>Full Name</label><input type="text" name="name" required placeholder="Your name"></div>
               <div class="form-group"><label>Phone</label><input type="tel" name="phone" required placeholder="+91 XXXXX XXXXX"></div>

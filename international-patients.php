@@ -44,7 +44,7 @@
         <div class="international-sidebar bg-light glass-card">
           <h3>Contact International Desk</h3>
           <p>Request a free remote evaluation of your medical reports.</p>
-          <form class="contact-form mt-2" action="#" method="POST">
+          <form class="contact-form mt-2" accept-charset='UTF-8' action='https://app.formester.com/forms/8b968eed-e587-4ac1-9b4a-0c508b75c1cc/submissions' method='POST'>
              <div class="form-group">
                 <label>Full Name</label>
                 <input type="text" name="name" required placeholder="Your full name">

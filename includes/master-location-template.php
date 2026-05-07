@@ -433,7 +433,7 @@
           </div>
         </div>
         <div class="contact-form-wrapper">
-          <form class="contact-form" action="#" method="POST">
+          <form class="contact-form" accept-charset='UTF-8' action='https://app.formester.com/forms/8b968eed-e587-4ac1-9b4a-0c508b75c1cc/submissions' method='POST'>
              <input type="hidden" name="area" value="<?php echo $area; ?>">
              <div class="form-group">
                 <label for="name">Full Name</label>
