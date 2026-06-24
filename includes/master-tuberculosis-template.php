@@ -2,7 +2,7 @@
 // Master Template for Spinal Tuberculosis Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Spinal Tuberculosis (Pott's Disease) Treatment in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Spinal Tuberculosis (Pott's Disease) Treatment in " . $area . " – Spine TB Specialist Dr. Arun Saroha";
 $page_description = "Advanced medical and surgical treatment for Spinal Tuberculosis in " . $area . " by Dr. Arun Saroha. Expert care for Pott's Disease and spinal infections in " . $area . ".";
 ?>
 

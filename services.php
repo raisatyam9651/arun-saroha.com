@@ -1,5 +1,5 @@
 <?php 
-  $pageTitle = "Advanced Neurosurgery Services | Dr. Arun Saroha - Brain & Spine Expert";
+  $pageTitle = "Neurosurgery Services – Brain Tumor, Spine & Disc Replacement Surgery | Dr. Arun Saroha";
   $pageDesc = "Explore the full range of neurosurgical services by Dr. Arun Saroha, including brain tumor surgery, disc replacement, and minimally invasive spine procedures.";
   include_once 'includes/header.php'; 
 ?>

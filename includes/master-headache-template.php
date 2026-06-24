@@ -2,7 +2,7 @@
 // Master Template for Headache & Migraine Treatment Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Headache & Migraine Treatment in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Headache & Migraine Treatment in " . $area . " – Neurosurgeon Dr. Arun Saroha";
 $page_description = "Expert headache and migraine treatment in " . $area . " by Dr. Arun Saroha. Advanced neurological care for chronic headaches, migraines, and cluster headaches in " . $area . ".";
 ?>
 

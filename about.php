@@ -1,5 +1,5 @@
 <?php 
-  $pageTitle = "About Dr. Arun Saroha | Best Neurosurgeon & Spine Surgeon in India";
+  $pageTitle = "About Dr. Arun Saroha – Best Neurosurgeon in India | 25+ Years of Experience, 8000+ Surgeries";
   $pageDesc = "Learn about Dr. Arun Saroha, the top neurosurgeon in India with 25+ years of experience, 8,000+ surgeries, and global fellowships. Discover his education at PGIMER Chandigarh and numerous awards.";
   $pageKeywords = "Dr. Arun Saroha biography, best neurosurgeon in india education, neurosurgeon fellowship Singapore, PGIMER Chandigarh alumni, top spine surgeon credentials";
   include 'includes/header.php'; 

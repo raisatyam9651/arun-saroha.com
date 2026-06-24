@@ -2,7 +2,7 @@
 // Master Template for Nerve Grafting & Repair Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Nerve Grafting & Peripheral Nerve Repair in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Nerve Grafting & Peripheral Nerve Repair Surgery in " . $area . " | Dr. Arun Saroha";
 $page_description = "Specialized nerve grafting and microsurgical nerve repair in " . $area . " by Dr. Arun Saroha. Expert treatment for nerve trauma and peripheral injuries in " . $area . ".";
 ?>
 

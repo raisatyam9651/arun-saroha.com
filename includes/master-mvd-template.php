@@ -2,7 +2,7 @@
 // Master Template for Microvascular Decompression (MVD) Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Microvascular Decompression (MVD) Surgery in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Microvascular Decompression (MVD) Surgery in " . $area . " – Trigeminal Neuralgia | Dr. Arun Saroha";
 $page_description = "Specialized MVD surgery for Trigeminal Neuralgia and Hemifacial Spasm in " . $area . " by Dr. Arun Saroha. Expert facial pain relief in " . $area . ".";
 ?>
 

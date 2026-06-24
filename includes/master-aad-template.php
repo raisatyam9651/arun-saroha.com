@@ -2,7 +2,7 @@
 // Master Template for Atlanto-Axial Dislocation Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Atlanto-Axial Dislocation (AAD) Surgery in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Atlanto-Axial Dislocation (AAD) Surgery in " . $area . " – Top Neurosurgeon Dr. Arun Saroha";
 $page_description = "Expert surgical treatment for Atlanto-Axial Dislocation (AAD) and C1-C2 instability in " . $area . " by Dr. Arun Saroha. World-class neurosurgical care for " . $area . " patients.";
 ?>
 

@@ -2,7 +2,7 @@
 // Master Template for Back Pain Treatment Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Back Pain Treatment in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Back Pain Treatment in " . $area . " – Minimally Invasive Spine Surgery | Dr. Arun Saroha";
 $page_description = "Seeking the best back pain treatment in " . $area . "? Dr. Arun Saroha is a world-renowned neurosurgeon offering minimally invasive back pain surgery and non-surgical care in " . $area . ".";
 ?>
 

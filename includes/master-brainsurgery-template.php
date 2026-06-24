@@ -3,7 +3,7 @@
 // Usage: Define $state and $area before including this file
 include_once __DIR__ . '/config.php';
 
-$pageTitle = "Best Brain Surgery in " . $area . " | Top Neurosurgeon - Dr. Arun Saroha";
+$pageTitle = "Best Brain Surgery in " . $area . " – Top Neurosurgeon Dr. Arun Saroha, Max Hospital India";
 $pageDesc = "Looking for the best brain surgery in " . $area . "? Dr. Arun Saroha is a premier neurosurgeon specializing in complex brain tumor surgery, aneurysm clipping, and stroke care in " . $area . ".";
 
 include __DIR__ . '/header.php';

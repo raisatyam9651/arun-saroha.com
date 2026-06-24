@@ -2,7 +2,7 @@
 // Master Template for Disc Replacement Surgery Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Artificial Disc Replacement Surgery in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Artificial Disc Replacement Surgery in " . $area . " – Top Spine Surgeon | Dr. Arun Saroha";
 $page_description = "Advanced motion-preserving Disc Replacement Surgery in " . $area . " by Dr. Arun Saroha. Expert cervical and lumbar ADR solutions for " . $area . " residents.";
 ?>
 

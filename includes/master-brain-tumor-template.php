@@ -2,7 +2,7 @@
 // Master Template for Brain Tumor Treatment Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Brain Tumor Treatment in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Brain Tumor Treatment in " . $area . " – Top Neurosurgeon Dr. Arun Saroha, Max Hospital";
 $page_description = "Expert brain tumor surgery in " . $area . " by Dr. Arun Saroha. World-class neurosurgical care for benign and malignant brain tumors in " . $area . ".";
 ?>
 

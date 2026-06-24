@@ -2,7 +2,7 @@
 // Master Template for Degenerative Disc Disease Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Degenerative Disc Disease Treatment in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Degenerative Disc Disease Treatment in " . $area . " – Spine Specialist | Dr. Arun Saroha";
 $page_description = "Advanced treatment for Degenerative Disc Disease (DDD) in " . $area . " by Dr. Arun Saroha. Specializing in disc replacement, fusion, and minimally invasive relief for " . $area . " patients.";
 ?>
 

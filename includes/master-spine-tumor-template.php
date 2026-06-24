@@ -2,7 +2,7 @@
 // Master Template for Endoscopic Spine Tumor Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Endoscopic Spine Tumor Surgery in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Endoscopic Spine Tumor Surgery in " . $area . " – Minimally Invasive | Dr. Arun Saroha";
 $page_description = "Advanced minimally invasive and endoscopic spine tumor removal in " . $area . " by Dr. Arun Saroha. Expert care for spinal cord tumors and intradural lesions in " . $area . ".";
 ?>
 

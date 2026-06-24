@@ -2,7 +2,7 @@
 // Master Template for Brachial Plexus Injury Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Brachial Plexus Surgery in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Brachial Plexus Surgery in " . $area . " – Peripheral Nerve Expert | Dr. Arun Saroha";
 $page_description = "Advanced Brachial Plexus repair and nerve transfer surgery in " . $area . " by Dr. Arun Saroha. Expert treatment for arm paralysis and nerve injuries in " . $area . ".";
 ?>
 

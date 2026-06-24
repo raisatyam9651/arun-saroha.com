@@ -2,7 +2,7 @@
 // Master Template for Cervical Spine Surgery Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Cervical Spine Surgery in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Cervical Spine Surgery in " . $area . " – ACDF & Disc Replacement | Dr. Arun Saroha";
 $page_description = "Seeking the best cervical spine surgery in " . $area . "? Dr. Arun Saroha is a top-rated neurosurgeon specializing in ACDF, cervical disc replacement, and neck pain relief in " . $area . ".";
 ?>
 

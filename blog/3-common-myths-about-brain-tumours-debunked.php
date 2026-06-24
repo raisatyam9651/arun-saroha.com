@@ -1,5 +1,5 @@
 <?php 
-  $pageTitle = "3 Common Myths About Brain Tumours Debunked | Dr. Arun Saroha";
+  $pageTitle = "3 Common Myths About Brain Tumours Debunked – Expert Facts | Dr. Arun Saroha, India";
   $pageDesc = "Clarifying common misconceptions about brain tumours. Dr. Arun Saroha explains why not all tumours are cancerous and other vital facts.";
   include '../includes/header.php'; 
 ?>

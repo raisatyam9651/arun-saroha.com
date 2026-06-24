@@ -1,5 +1,5 @@
 <?php 
-  $pageTitle = "Medical Blog & Patient Insights | Dr. Arun Saroha - Brain & Spine";
+  $pageTitle = "Neurosurgery Blog & Patient Insights | Dr. Arun Saroha – Brain & Spine Health Tips";
   $pageDesc = "Stay updated with the latest in neuroscience, spine health tips, and advanced brain surgery insights from Dr. Arun Saroha.";
   include_once 'includes/header.php'; 
 ?>

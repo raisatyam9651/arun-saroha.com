@@ -3,7 +3,7 @@
 // Usage: Define $state and $area before including this file
 include_once __DIR__ . '/config.php';
 
-$pageTitle = "Best Herniated Disc Surgery in " . $area . " | Slip Disc Treatment - Dr. Arun Saroha";
+$pageTitle = "Best Herniated Disc (Slip Disc) Surgery in " . $area . " – Microdiscectomy Expert Dr. Arun Saroha";
 $pageDesc = "Suffering from a slip disc? Get the best herniated disc surgery in " . $area . " with Dr. Arun Saroha. Expert in minimally invasive microdiscectomy for sciatica and nerve relief in " . $area . ".";
 
 include __DIR__ . '/header.php'; 

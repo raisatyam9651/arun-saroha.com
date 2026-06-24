@@ -1,5 +1,5 @@
 <?php 
-  $pageTitle = "How to Know if You Really Need Spine Surgery | Dr. Arun Saroha Blog";
+  $pageTitle = "How to Know if You Really Need Spine Surgery – Signs & Treatment Options | Dr. Arun Saroha";
   $pageDesc = "Is surgery always necessary for back pain? Dr. Arun Saroha explains when spine surgery is the right choice and when conservative care is better.";
   include '../includes/header.php'; 
 ?>

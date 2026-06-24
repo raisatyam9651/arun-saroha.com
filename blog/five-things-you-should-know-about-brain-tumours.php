@@ -1,5 +1,5 @@
 <?php 
-  $pageTitle = "5 Critical Things You Should Know About Brain Tumours | Dr. Arun Saroha";
+  $pageTitle = "5 Critical Things to Know About Brain Tumours – Symptoms, Causes & Treatment | Dr. Arun Saroha";
   $pageDesc = "Essential facts about brain tumours including symptoms, causes, and treatment options. Explained by India's top neurosurgeon Dr. Arun Saroha.";
   include '../includes/header.php'; 
 ?>

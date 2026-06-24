@@ -2,7 +2,7 @@
 // Master Template for Spinal Stenosis Treatment Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Spinal Stenosis Treatment in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Spinal Stenosis Treatment in " . $area . " – Laminectomy Specialist | Dr. Arun Saroha";
 $page_description = "Advanced Spinal Stenosis treatment and decompression surgery in " . $area . " by Dr. Arun Saroha. Expert relief for neurogenic claudication and leg pain in " . $area . ".";
 ?>
 

@@ -6,7 +6,7 @@
   if (!isset($state)) { $state = "Delhi"; }
   $locationName = $area . ", " . $state;
   
-  $pageTitle = "Best Neurosurgeon in $area | Dr. Arun Saroha – Brain & Spine Expert in $state";
+  $pageTitle = "Best Neurosurgeon in $area, $state – Dr. Arun Saroha | Top Brain & Spine Surgeon India";
   $pageDesc = "Consult Dr. Arun Saroha, the best neurosurgeon in $area. Over 25 years of experience in complex brain & spine surgeries. Trusted by patients in $area for elite neurological care.";
   $pageKeywords = "best neurosurgeon in $area, top spine surgeon in $area, brain tumor specialist $area, Dr. Arun Saroha $area, neurosurgery hospital $state";
   

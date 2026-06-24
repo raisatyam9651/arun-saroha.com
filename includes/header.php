@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title><?php echo isset($pageTitle) ? $pageTitle : "Best Neurosurgeon in India | Dr. Arun Saroha – Brain & Spine Surgeon"; ?></title>
+  <title><?php echo isset($pageTitle) ? $pageTitle : "Dr. Arun Saroha – Best Neurosurgeon & Spine Surgeon in India | Max Hospital Delhi & Gurugram"; ?></title>
   <meta name="keywords" content="<?php echo isset($pageKeywords) ? $pageKeywords : 'top spine surgeon in gurgaon, spine surgeon gurgaon, best neurosurgeon in max hospital, best spine surgeon in max hospital, Best Neurosurgeon in Delhi, Best Spine Surgeon in Delhi, Top Neurosurgeon in Delhi, neurosurgeon in max gurgaon, best neurosurgeon in gurgaon, Neurosurgeon in gurgaon, Best Neuro Surgeon in Gurugram India, best spine surgeon in delhi, spine surgery New delhi, Best Spine Surgeon in New Delhi India, Top Spine Surgeon In Delhi, best spine surgeon in gurgaon, Best Spine Surgeon in Gurugram, Best Spine Doctor in gurgaon India'; ?>">
   <meta name="description" content="<?php echo isset($pageDesc) ? $pageDesc : 'Looking for the best neurosurgeon in India? Consult Dr. Arun Saroha – 25+ years of experience, 6,000+ successful surgeries at Max Hospital Delhi & Gurugram. Book a consultation today.'; ?>" />
 

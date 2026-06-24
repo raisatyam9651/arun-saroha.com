@@ -2,7 +2,7 @@
 // Master Template for Blood Clot Treatment Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Blood Clot Treatment in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Blood Clot (Brain Stroke) Treatment in " . $area . " – Neuro Specialist Dr. Arun Saroha";
 $page_description = "Expert blood clot (cerebral thrombosis) treatment in " . $area . " by Dr. Arun Saroha. World-class neurosurgical care for stroke prevention and clot removal in " . $area . ".";
 ?>
 

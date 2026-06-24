@@ -1,5 +1,5 @@
 <?php 
-  $pageTitle = "Best Neurosurgeon in India | Dr. Arun Saroha – Brain & Spine Surgeon";
+  $pageTitle = "Dr. Arun Saroha – Best Neurosurgeon in India | Top Brain & Spine Surgeon at Max Hospital";
   $isHome = true;
   include 'includes/header.php'; 
 ?>

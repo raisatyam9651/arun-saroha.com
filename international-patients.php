@@ -1,5 +1,5 @@
 <?php 
-  $pageTitle = "International Patient Support | Dr. Arun Saroha - Global Neurosurgery Hub";
+  $pageTitle = "International Patients – Affordable Neurosurgery in India | Dr. Arun Saroha, Max Hospital";
   $pageDesc = "Trusted by patients from 30+ countries. End-to-end support for international neurosurgery patients, including visa assistance, translators, and priority care.";
   include_once 'includes/header.php'; 
 ?>

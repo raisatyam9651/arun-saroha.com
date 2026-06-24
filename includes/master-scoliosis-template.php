@@ -2,7 +2,7 @@
 // Master Template for Scoliosis Treatment Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Scoliosis Correction Surgery in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Scoliosis Correction Surgery in " . $area . " – Spine Deformity Specialist Dr. Arun Saroha";
 $page_description = "Advanced Scoliosis treatment and correction surgery in " . $area . " by Dr. Arun Saroha. Expert spinal deformity correction for children and adults in " . $area . ".";
 ?>
 

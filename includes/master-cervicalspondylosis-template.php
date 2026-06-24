@@ -3,7 +3,7 @@
 // Usage: Define $state and $area before including this file
 include_once __DIR__ . '/config.php';
 
-$pageTitle = "Best Cervical Spondylosis Treatment in " . $area . " | Dr. Arun Saroha";
+$pageTitle = "Best Cervical Spondylosis Treatment in " . $area . " – Neck Pain Specialist | Dr. Arun Saroha";
 $pageDesc = "Suffering from neck pain and stiffness? Get the best cervical spondylosis treatment in " . $area . " with Dr. Arun Saroha. Expert care for age-related neck wear and nerve compression in " . $area . ".";
 
 include __DIR__ . '/header.php';

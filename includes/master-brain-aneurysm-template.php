@@ -2,7 +2,7 @@
 // Master Template for Brain Aneurysm Treatment Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Brain Aneurysm Treatment in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Brain Aneurysm Treatment in " . $area . " – Top Neurovascular Surgeon Dr. Arun Saroha";
 $page_description = "Expert brain aneurysm (cerebral aneurysm) treatment in " . $area . " by Dr. Arun Saroha. World-class neurosurgical care for aneurysm clipping and coiling in " . $area . ".";
 ?>
 

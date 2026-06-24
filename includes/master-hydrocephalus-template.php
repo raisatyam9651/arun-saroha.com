@@ -2,7 +2,7 @@
 // Master Template for Hydrocephalus Treatment Location Pages
 // Usage: Define $state and $area before including this file
 
-$page_title = "Best Hydrocephalus Treatment in " . $area . " | Dr. Arun Saroha";
+$page_title = "Best Hydrocephalus Treatment in " . $area . " – Brain Shunt Surgery | Dr. Arun Saroha";
 $page_description = "Expert hydrocephalus (water on the brain) treatment in " . $area . " by Dr. Arun Saroha. World-class neurosurgical care for pediatric and adult hydrocephalus in " . $area . ".";
 ?>
 
