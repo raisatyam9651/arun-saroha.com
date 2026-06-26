@@ -12,6 +12,13 @@
   <link rel="canonical" href="<?php echo $currentPath; ?>" />
   <meta name="robots" content="index, follow" />
 
+  <!-- Favicons -->
+  <link rel="shortcut icon" href="<?php echo $root; ?>assets/images/favicon.png" type="image/x-icon" />
+  <link rel="icon" type="image/svg+xml" href="<?php echo $root; ?>assets/images/favicon.svg">
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $root; ?>assets/images/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $root; ?>assets/images/favicon-32x32.png">
+  <link rel="apple-touch-icon" href="<?php echo $root; ?>assets/images/apple-touch-icon.png">
+
   <!-- Open Graph -->
   <meta property="og:title" content="<?php echo isset($pageTitle) ? $pageTitle : 'Best Neurosurgeon in India | Dr. Arun Saroha'; ?>" />
   <meta property="og:description" content="<?php echo isset($pageDesc) ? $pageDesc : 'Consult Dr. Arun Saroha, the best neurosurgeon in India. 25+ years, 6,000+ surgeries at Max Hospital Delhi & Gurugram.'; ?>" />

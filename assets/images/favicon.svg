@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <!-- Background: Deep Blue -->
+  <rect width="512" height="512" rx="128" fill="#0f3d81"/>
+  
+  <!-- Gradients -->
+  <defs>
+    <linearGradient id="gold-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd56b"/>
+      <stop offset="100%" stop-color="#e6b325"/>
+    </linearGradient>
+    <linearGradient id="white-gradient" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e0e6ed"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Emblem: Stylized spine with a medical cross and brain theme -->
+  <g transform="translate(256, 256)">
+    <!-- Outer subtle circle -->
+    <circle cx="0" cy="0" r="180" fill="none" stroke="url(#gold-gradient)" stroke-width="6" opacity="0.3" stroke-dasharray="12 12"/>
+    
+    <!-- Stylized brain at the top -->
+    <path d="M -60 -120 C -60 -170 -30 -190 0 -190 C 30 -190 60 -170 60 -120 C 60 -110 50 -100 35 -100 C 20 -100 15 -115 15 -120 C 15 -140 5 -150 0 -150 C -5 -150 -15 -140 -15 -120 C -15 -115 -20 -100 -35 -100 C -50 -100 -60 -110 -60 -120 Z" fill="url(#white-gradient)"/>
+    
+    <!-- Stylized spine vertebrae (capsules) -->
+    <rect x="-16" y="-80" width="32" height="20" rx="10" fill="url(#white-gradient)"/>
+    <rect x="-24" y="-50" width="48" height="24" rx="12" fill="url(#white-gradient)"/>
+    <rect x="-32" y="-16" width="64" height="28" rx="14" fill="url(#gold-gradient)"/> <!-- Golden center/sacral area -->
+    <rect x="-24" y="22" width="48" height="24" rx="12" fill="url(#white-gradient)"/>
+    <rect x="-16" y="56" width="32" height="20" rx="10" fill="url(#white-gradient)"/>
+    <rect x="-8" y="86" width="16" height="16" rx="8" fill="url(#white-gradient)"/>
+    
+    <!-- Medical Cross horizontal bar (left and right wings) -->
+    <path d="M -125 -16 L -55 -16 C -45 -16 -45 -6 -55 -6 L -125 -6 C -135 -6 -135 -16 -125 -16 Z" fill="url(#gold-gradient)"/>
+    <path d="M 125 -16 L 55 -16 C 45 -16 45 -6 55 -6 L 125 -6 C 135 -6 135 -16 125 -16 Z" fill="url(#gold-gradient)"/>
+  </g>
+</svg>
